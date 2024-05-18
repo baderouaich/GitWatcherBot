@@ -49,11 +49,11 @@ private:
 private:
   void watchDog();
 
-  void alertUserRepositoryStarsChange(ChatId chatId, const std::string& repositoryName, std::int64_t oldStarsCount, std::int64_t newStarsCount);
-  void alertUserRepositoryWatchersChange(ChatId chatId, const std::string& repositoryName, std::int64_t oldWatchersCount, std::int64_t newWatchersCount);
-  void alertUserRepositoryIssuesChange(ChatId chatId, const std::string& repositoryName, std::int64_t oldIssuesCount, std::int64_t newIssuesCount);
-  void alertUserRepositoryForksChange(ChatId chatId, const std::string& repositoryName, std::int64_t oldForksCount, std::int64_t newForksCount);
-  void alertUserRepositoryPullRequestsChange(ChatId chatId, const std::string& repositoryName, std::int64_t oldPullsCount, std::int64_t newPullsCount);
+  void alertUserRepositoryStarsChange(UserId userId, const std::string& repositoryName, std::int64_t oldStarsCount, std::int64_t newStarsCount);
+  void alertUserRepositoryWatchersChange(UserId userId, const std::string& repositoryName, std::int64_t oldWatchersCount, std::int64_t newWatchersCount);
+  void alertUserRepositoryIssuesChange(UserId userId, const std::string& repositoryName, std::int64_t oldIssuesCount, std::int64_t newIssuesCount);
+  void alertUserRepositoryForksChange(UserId userId, const std::string& repositoryName, std::int64_t oldForksCount, std::int64_t newForksCount);
+  void alertUserRepositoryPullRequestsChange(UserId userId, const std::string& repositoryName, std::int64_t oldPullsCount, std::int64_t newPullsCount);
 
 private:
   void notifyAdmin(const std::string& msg, const std::source_location& loc = std::source_location::current());

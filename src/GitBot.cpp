@@ -591,7 +591,7 @@ void GitBot::onUnwatchRepoCommand(const tgbotxx::Ptr<tgbotxx::Message> message) 
   row.push_back(cancelBtn);
   keyboard->inlineKeyboard.push_back(row);
 
-  safeSendMessage(message->chat->id, "Click a repository to unwatch:", 0, "", {}, false, false, false, 0, false, keyboard);
+  safeSendMessage(userId, "Click a repository to unwatch:", 0, "", {}, false, false, false, 0, false, keyboard);
 }
 
 void GitBot::notifyAdmin(const std::string &msg, const std::source_location &loc) {
