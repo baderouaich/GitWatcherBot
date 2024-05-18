@@ -1,7 +1,7 @@
 ## Goal
 This small project demonstrates how to create a real world Telegram Bot using C++ and [tgbotxx](https://github.com/baderouaich/tgbotxx) Telegram Bot library with SQLite3 [orm](https://github.com/fnc12/sqlite_orm) database.
 
-It is meant to run for days rather months if nothing really bad went wrong, the Bot will restart after system reboot with a [cron jobs script](./cron_jobs.sh) and carry on running.
+It is meant to run for the long term if nothing really bad went wrong, the Bot will restart after system reboot with a [cron jobs script](./cron_jobs.sh) and carry on running.
 
 The Bot will handle long polling errors that occur sometimes which can be caused usually by network issues, Telegram server not responding and more. It will also notify an admin when some issue occurs so it can be fixed in a sooner time.
 
