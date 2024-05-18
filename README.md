@@ -7,7 +7,7 @@ The Bot will handle long polling errors that occur sometimes which can be caused
 
 The project also demonstrates how you can implement a middleware like function to handle users requests securely. As well as a thread pool to handle multiple user requests simultaneously. 
 
-Finally, it also shows how to use a SQLite3 database to store data safely with multiple threads readers and writers.
+Finally, it also shows how to use a SQLite3 database to store data safely with multiple threads readers and writers, as well as database backup periodically (every hour). 
 
 
 ## GitWatcherBot
