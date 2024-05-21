@@ -282,7 +282,7 @@ void GitBot::watchDog() {
       Database::iterateRepos([this](const models::Repository &localRepo) {
         if (Database::getUserStatus(*localRepo.watcher_id) != UserStatus::ACTIVE)
           // Skip repositories that belong to users who blocked the bot and banned users.
-          continue;
+          return;
 
         models::Repository remoteRepo = m_gitApi->getRepository(localRepo.full_name);
 
