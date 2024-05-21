@@ -13,9 +13,9 @@ void Database::backup() {
 #endif
   try {
     static const fs::path dbBackupsDir = fs::path(RES_DIR) / "DbBackups";
-    fs::path yearMonthDayDir = dbBackupsDir / tgbotxx::DateTimeUtils::currentDateTime("%Y/%m/%d"); // DbBackups/2024/03/25/
+    fs::path yearMonthDayDir = dbBackupsDir / tgbotxx::DateTimeUtils::now("%Y/%m/%d"); // DbBackups/2024/03/25/
     if (!fs::exists(yearMonthDayDir)) fs::create_directories(yearMonthDayDir);
-    fs::path dbBackupFilename = yearMonthDayDir / ("Database-" + tgbotxx::DateTimeUtils::currentDateTime("%Y-%m-%d-%H-%M-%S") + ".db"); // DbBackups/2024/03/25/Database-2024-03-25-22-00-01.db
+    fs::path dbBackupFilename = yearMonthDayDir / ("Database-" + tgbotxx::DateTimeUtils::now("%Y-%m-%d-%H-%M-%S") + ".db"); // DbBackups/2024/03/25/Database-2024-03-25-22-00-01.db
     getStorage().backup_to(dbBackupFilename.string());
     // Compress Database-2024-...db into Database-2024-...db.tar.xz
     // tar -cJf <archive.tar.xz> <files>
@@ -91,7 +91,7 @@ bool Database::repoExists(const models::RepositoryId repoId) {
 bool Database::repoExistsByFullName(const std::string &full_name) {
   std::lock_guard guard{m_mutex};
   return !!getStorage().count<models::Repository>(
-    where(lower(&models::Repository::full_name) == tgbotxx::StringUtils::toLower(full_name))
+    where(lower(&models::Repository::full_name) == tgbotxx::StringUtils::toLowerCopy(full_name))
   );
 }
 
