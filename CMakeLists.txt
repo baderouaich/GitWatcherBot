@@ -32,3 +32,19 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 add_compile_definitions(RES_DIR="${CMAKE_CURRENT_SOURCE_DIR}/res")
 ##################################
+
+
+###### Doxygen Documentation ######
+if (BUILD_DOCS)
+    message(STATUS "Building Doxygen docs is enabled")
+    find_package(Doxygen REQUIRED)
+    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
+    add_custom_target(build_docs ALL
+            COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            COMMENT "Generating Doxygen API documentation..."
+            VERBATIM
+            )
+    install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/html/ TYPE DOC)
+endif ()
+###################################
