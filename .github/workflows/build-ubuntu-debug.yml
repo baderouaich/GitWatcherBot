@@ -28,7 +28,6 @@ jobs:
         sudo apt update
         sudo apt-get install cmake g++-12 gcc-12 ninja-build
 
-
     - name: Ensure deps are installed
       run: |
         cmake --version
