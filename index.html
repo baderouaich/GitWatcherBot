@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>GitWatcherBot: Goal</title>
+<title>GitWatcherBot: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -84,19 +84,21 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Goal </div>  </div>
+<div class="title">GitWatcherBot Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a>This small project demonstrates how to create a real world Telegram Bot using C++ and <a href="https://github.com/baderouaich/tgbotxx">tgbotxx</a> Telegram Bot library with SQLite3 <a href="https://github.com/fnc12/sqlite_orm">orm</a> database.</p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/baderouaich/GitWatcherBot/blob/main/LICENSE"><img src="https://img.shields.io/badge/license-MIT-yellow" alt="MIT License" class="inline"/></a> <a href="https://baderouaich.github.io/GitWatcherBot"><img src="https://codedocs.xyz/doxygen/doxygen.svg" alt="Docs" style="pointer-events: none;" class="inline"/></a> <a href="https://img.shields.io/badge/C++-23-blue.svg?style=flat&amp;logo=c%2B%2B"><img src="https://img.shields.io/badge/C++-23-blue.svg?style=flat&amp;logo=c%2B%2B" alt="Language" style="pointer-events: none;" class="inline"/></a></p>
+<h2>Goal</h2>
+<p>This small project demonstrates how to create a real world Telegram Bot using C++ and <a href="https://github.com/baderouaich/tgbotxx">tgbotxx</a> Telegram Bot library with SQLite3 <a href="https://github.com/fnc12/sqlite_orm">orm</a> database.</p>
 <p>It is meant to run for the long term if nothing really bad went wrong, the Bot will restart after system reboot with a <a href="./cron_jobs.sh">cron jobs script</a> and carry on running.</p>
 <p>The Bot will handle long polling errors that occur sometimes which can be caused usually by network issues, Telegram server not responding and more. It will also notify an admin when some issue occurs so it can be fixed in a sooner time.</p>
 <p>The project also demonstrates how you can implement a middleware like function to handle users requests securely. As well as a thread pool to handle multiple user requests simultaneously.</p>
 <p>Finally, it also shows how to use a SQLite3 database to store data safely with multiple threads readers and writers, as well as database backup periodically (every hour).</p>
-<h1>GitWatcherBot</h1>
+<h2>GitWatcherBot</h2>
 <p>A Telegram Bot that notifies you when a new change is made in your repositories (issues, pull requests, stars, forks, and watches).</p>
 <p>You can add specific repositories to your watch list and get changes notifications.</p>
 <p><img src="https://i.ibb.co/XDXV2PZ/NEW.jpg" alt="Demo Image" width="300" class="inline"/></p>
-<h1>Run your own version of the Bot</h1>
+<h2>Run your own version of the Bot</h2>
 <ol type="1">
 <li>Clone the repository</li>
 <li>Acquire a new Bot token from @BotFather and store it in <code>res/BOT_TOKEN.txt</code>.</li>
@@ -104,21 +106,30 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li>Build &amp; Run your Bot detached from the console with the <a href="./build_and_run.sh">build_and_run.sh</a> script</li>
 <li>Congratulations! your Bot is now running in the background. To stop your Bot, run <code>pkill GitWatcherBot</code></li>
 </ol>
-<h2>Requirements</h2>
+<h3>Requirements</h3>
 <ul>
 <li>Linux OS (Ubuntu recommended)</li>
 <li>cmake 3.20+</li>
 <li>g++-11/clang++-12 and up</li>
 <li>tgbotxx (will be fetched by cmake)</li>
-<li>sqlite3_orm (will be fetched by cmake) </li>
+<li>sqlite3_orm (will be fetched by cmake)</li>
 </ul>
+<h3>CI Status</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Operating system   </th><th class="markdownTableHeadNone">Build status    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Ubuntu Debug (x64)   </td><td class="markdownTableBodyNone"><a href="https://github.com/baderouaich/GitWatcherBot/actions/workflows/build-ubuntu-debug.yml"><img src="https://img.shields.io/github/actions/workflow/status/baderouaich/GitWatcherBot/build-ubuntu-debug.yml?branch=main" alt="Ubuntu" class="inline"/></a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Ubuntu Release (x64)   </td><td class="markdownTableBodyNone"><a href="https://github.com/baderouaich/GitWatcherBot/actions/workflows/build-ubuntu-release.yml"><img src="https://img.shields.io/github/actions/workflow/status/baderouaich/GitWatcherBot/build-ubuntu-release.yml?branch=main" alt="Ubuntu" class="inline"/></a>   </td></tr>
+</table>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue May 21 2024 19:05:28 for GitWatcherBot by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Tue May 21 2024 19:19:12 for GitWatcherBot by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

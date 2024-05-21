@@ -24,9 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "GitWatcherBot", "index.html", [
-    [ "Goal", "index.html", null ]
-  ] ]
+  [ "GitWatcherBot", "index.html", ]
 ];
 
 var NAVTREEINDEX =
