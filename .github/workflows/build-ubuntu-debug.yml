@@ -26,7 +26,7 @@ jobs:
     - name: Update apt repositories & install deps
       run: |
         sudo apt update
-        sudo apt-get install cmake g++ ninja-build
+        sudo apt-get install cmake g++-12 ninja-build
 
     - name: Ensure deps are installed
       run: |
