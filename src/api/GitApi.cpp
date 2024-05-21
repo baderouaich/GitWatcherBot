@@ -16,9 +16,9 @@ models::Repository GitApi::getRepository(const std::string &repositoryFullName) 
   }
   if (json.contains("message")) {
     std::string msg = json["message"];
-    if (tgbotxx::StringUtils::toLower(msg).contains("rate limit exceeded")) {
+    if (tgbotxx::StringUtils::toLowerCopy(msg).contains("rate limit exceeded")) {
       throw GitApiRateLimitExceededException(msg);
-    } else if (tgbotxx::StringUtils::toLower(msg).contains("not found")) {
+    } else if (tgbotxx::StringUtils::toLowerCopy(msg).contains("not found")) {
       throw GitApiRepositoryNotFoundException(msg);
     } else {
       throw std::runtime_error("Failed to get Repository '" + repositoryFullName + "': " + json["message"].get<std::string>());

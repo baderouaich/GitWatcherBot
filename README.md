@@ -1,3 +1,7 @@
+[![MIT License](https://img.shields.io/badge/license-MIT-yellow)](https://github.com/baderouaich/GitWatcherBot/blob/main/LICENSE)
+[![Docs](https://codedocs.xyz/doxygen/doxygen.svg)](https://baderouaich.github.io/GitWatcherBot)
+[![Language](https://img.shields.io/badge/C++-23-blue.svg?style=flat&logo=c%2B%2B)](https://img.shields.io/badge/C++-23-blue.svg?style=flat&logo=c%2B%2B)
+
 ## Goal
 This small project demonstrates how to create a real world Telegram Bot using C++ and [tgbotxx](https://github.com/baderouaich/tgbotxx) Telegram Bot library with SQLite3 [orm](https://github.com/fnc12/sqlite_orm) database.
 
@@ -33,3 +37,10 @@ You can add specific repositories to your watch list and get changes notificatio
 - g++-11/clang++-12 and up
 - tgbotxx (will be fetched by cmake)
 - sqlite3_orm (will be fetched by cmake)
+
+### CI Status
+
+| Operating system | Build status                                                                                                                                                                                      |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Ubuntu Debug (x64) | [![Ubuntu](https://img.shields.io/github/actions/workflow/status/baderouaich/GitWatcherBot/build-ubuntu-debug.yml?branch=main)](https://github.com/baderouaich/GitWatcherBot/actions/workflows/build-ubuntu-debug.yml)    |
+| Ubuntu Release (x64) | [![Ubuntu](https://img.shields.io/github/actions/workflow/status/baderouaich/GitWatcherBot/build-ubuntu-release.yml?branch=main)](https://github.com/baderouaich/GitWatcherBot/actions/workflows/build-ubuntu-release.yml)    |
