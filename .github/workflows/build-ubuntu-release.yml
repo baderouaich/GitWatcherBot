@@ -1,0 +1,41 @@
+name: build-ubuntu-debug
+
+# build on pushes and pull requests on main branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        architecture: [x64] #architecture: [x86, x64]
+        build-platform: [x64] #build-platform: [x86, x64]
+
+    steps:
+    # https://github.com/actions/checkout
+    - uses: actions/checkout@v4
+
+    - name: Update apt repositories & install deps
+      run: |
+        sudo apt update
+        sudo apt-get install cmake g++ make ninja-build libssl-dev
+
+    - name: Ensure deps are installed
+      run: |
+        cmake --version
+        g++ --version
+        ninja --version
+
+    - name: Build
+      run: |
+        mkdir build && cd build
+        cmake .. -GNinja
+        ninja
