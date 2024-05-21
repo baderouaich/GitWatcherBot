@@ -26,16 +26,17 @@ jobs:
     - name: Update apt repositories & install deps
       run: |
         sudo apt update
-        sudo apt-get install cmake g++-12 ninja-build
+        sudo apt-get install cmake g++-12 gcc-12 ninja-build
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 100 --slave /usr/bin/g++ g++ /usr/bin/g++-12 --slave
 
     - name: Ensure deps are installed
       run: |
         cmake --version
-        g++-12 --version
+        g++ --version
         ninja --version
 
     - name: Build
       run: |
         mkdir build && cd build
-        cmake .. -GNinja
+        cmake .. -GNinja -DCMAKE_C_COMPILER=gcc-12 -DCMAKE_CXX_COMPILER=g++-12
         ninja
