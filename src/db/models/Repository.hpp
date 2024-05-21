@@ -23,7 +23,7 @@ namespace models {
     std::string language;
     std::time_t createdAt{};
     std::time_t updatedAt{};
-    std::unique_ptr<UserId> watcher_id; // user id who is watching changes on this repo
+    std::unique_ptr<UserId> watcher_id; ///<! User id who is watching changes on this repo
 
     static auto table() {
       using namespace sqlite_orm;

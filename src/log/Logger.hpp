@@ -21,7 +21,7 @@ static constexpr bool kLogToConsole = false;
 static constexpr bool kLogToConsole = true;
 #endif
 
-/// Logs to console on Debug mode and saves log to db.
+/// @brief Logs to console on Debug mode and saves log to db.
 #define LOG(level, txt, longTxt, color)                         \
   try                                                           \
   {                                                             \

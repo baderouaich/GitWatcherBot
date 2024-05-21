@@ -3,6 +3,7 @@
 #include <vector>
 #include <string>
 
+/// @brief Encodes string to base64
 static std::string base64Encode(const std::string &in) {
 
   std::string out;
@@ -21,6 +22,7 @@ static std::string base64Encode(const std::string &in) {
   return out;
 }
 
+/// @brief Decodes base64 to string
 static std::string base64Decode(const std::string &in) {
 
   std::string out;

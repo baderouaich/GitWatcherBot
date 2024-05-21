@@ -1,6 +1,8 @@
 #pragma once
 #include <utility>
 
+/// @brief Executes a function at the end of the scope (deferred) using RAII
+/// @ref gsl libs
 template <class F>
 class FinalAction
 {

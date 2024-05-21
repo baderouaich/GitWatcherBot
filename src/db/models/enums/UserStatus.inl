@@ -3,13 +3,17 @@
 #include "sqlite_orm/sqlite_orm.h"
 
 namespace models {
+  /// @brief User's situation with the Bot
   enum class UserStatus : std::uint8_t {
-    ACTIVE, // <! User is active, not banned and can interact with the bot anytime and can receive repositories updates
-    BANNED, // <! User is banned and cannot interact with the Bot for some reason
-    BLOCKED_BOT // <! User has blocked the Bot
+    /// @brief User is active, not banned and can interact with the bot anytime and can receive repositories updates
+    ACTIVE, 
+    /// @brief User is banned and cannot interact with the Bot for some reason
+    BANNED, 
+    /// @brief User has blocked the Bot
+    BLOCKED_BOT 
   };
 
-
+  /// @brief Converts enum UserStatus to std::string
   static std::string userStatusToString(const UserStatus userStatus) noexcept {
     switch (userStatus) {
       case UserStatus::ACTIVE:
@@ -23,6 +27,7 @@ namespace models {
     }
   }
 
+  /// @brief Converts std::string to enum UserStatus
   static std::optional<UserStatus> stringToUserStatus(const std::string &str) noexcept {
     if (str == "ACTIVE") return UserStatus::ACTIVE;
     else if (str == "BANNED") return UserStatus::BANNED;
