@@ -28,7 +28,7 @@ jobs:
       run: | # this will generate a docs/html/** folder (configured in the Doxyfile)
         mkdir build && cd build
         cmake .. -GNinja -DBUILD_DOCS=ON
-        ninja build_docs
+        ninja docs_build
 
     - name: Deploy generated documentation
       uses: peaceiris/actions-gh-pages@v3

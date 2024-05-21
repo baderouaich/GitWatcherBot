@@ -39,7 +39,7 @@ if (BUILD_DOCS)
     message(STATUS "Building Doxygen docs is enabled")
     find_package(Doxygen REQUIRED)
     configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
-    add_custom_target(build_docs ALL
+    add_custom_target(docs_build ALL
             COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             COMMENT "Generating Doxygen API documentation..."
