@@ -110,6 +110,9 @@ bool GitBot::middleware(const tgbotxx::Ptr<tgbotxx::Message> &message) {
     return false;
   }
 
+  // Ignore /start commands
+  if(message->text == "/start") return true;
+
   // User must exist in the database
   if (not Database::userExists(message->from->id)) {
     safeSendMessage(message->from->id, "Send a /start command first to start interacting with the Bot.");
