@@ -87,15 +87,15 @@ namespace sqlite_orm {
    */
   template<>
   struct row_extractor<UserStatus> {
-    UserStatus extract(const char *row_value) {
-      if (auto gender = stringToUserStatus(row_value); gender.has_value()) {
-        return *gender;
+    UserStatus extract(const char *row_value) const {
+      if (auto us = stringToUserStatus(row_value); us.has_value()) {
+        return *us;
       } else {
         throw std::runtime_error("Could not convert string " + std::string(row_value) + " to enum UserStatus");
       }
     }
 
-    UserStatus extract(sqlite3_stmt *stmt, int columnIndex) {
+    UserStatus extract(sqlite3_stmt *stmt, int columnIndex) const {
       auto str = sqlite3_column_text(stmt, columnIndex);
       return this->extract((const char *) str);
     }
