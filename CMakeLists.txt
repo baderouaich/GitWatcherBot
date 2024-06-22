@@ -17,7 +17,7 @@ FetchContent_MakeAvailable(tgbotxx)
 # sqlite3 orm lib
 FetchContent_Declare(sqlite_orm
   GIT_REPOSITORY "https://github.com/fnc12/sqlite_orm"
-  GIT_TAG "master"
+  GIT_TAG "dev"
 )
 FetchContent_MakeAvailable(sqlite_orm)
 
