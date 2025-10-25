@@ -10,7 +10,7 @@ include(FetchContent)
 # tgbotxx lib
 FetchContent_Declare(tgbotxx
   GIT_REPOSITORY "https://github.com/baderouaich/tgbotxx"
-  GIT_TAG "main"
+  GIT_TAG "v1.0.6.9"
 )
 FetchContent_MakeAvailable(tgbotxx)
 
